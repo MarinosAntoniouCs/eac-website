@@ -47,7 +47,7 @@ body.dark-mode .navmenu {
   background: transparent !important;
 }
 
-body.dark-mode .navmenu ul {
+body.dark-mode .navmenu > ul { /* <--- This is the fix */
   background-color: transparent !important;
   background: transparent !important;
 }
@@ -592,6 +592,10 @@ h6 {
     align-items: center;
   }
 
+  body.dark-mode .navmenu > ul {
+    background-color: transparent !important;
+  }
+
   .navmenu li {
     position: relative;
   }
@@ -639,7 +643,7 @@ h6 {
     top: 130%;
     opacity: 0;
     transition: 0.3s;
-    border-radius: 4px;
+    border-radius: 6px;
     z-index: 99;
     box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.1);
   }
@@ -725,7 +729,7 @@ h6 {
     display: none;
     list-style: none;
     position: absolute;
-    inset: 60px 20px 20px 20px;
+    inset: 60px 20px auto 20px;
     padding: 10px 0;
     margin: 0;
     border-radius: 6px;
@@ -2420,4 +2424,19 @@ body {
   bottom: 75px !important;
   right: 20px !important;
   z-index: 9999 !important;
+}
+
+/* KEEP the overlay slightly transparent */
+body.dark-mode.mobile-nav-active .navmenu {
+  background: rgba(6, 23, 41, 0.75) !important;
+}
+
+/* MAKE THE MENU PANEL BLUE AND NOT GLASS */
+body.dark-mode .navmenu > ul {
+  background-color: #061729 !important; /* Solid dark blue */
+}
+
+/* Dropdowns inside menu */
+body.dark-mode .navmenu .dropdown ul {
+  background-color: #0f1f33 !important; /* Solid darker blue */
 }
