@@ -2442,23 +2442,22 @@ body.dark-mode .navmenu .dropdown ul {
 }
 
 /* * Mobile-Only "Top Left" Popup Fix 
- * Moves the popup to the top to avoid the chatbot
+ * Moves the popup down to clear the logo/header
  */
 @media (max-width: 575px) {
   
   /* 1. Move the Widget Container */
   .side-popup-widget {
-    top: 100px !important;   /* Place it below the header */
-    left: 15px !important;   /* Align to left edge */
-    bottom: auto !important; /* Unset the bottom position */
+    top: 150px !important;   /* <-- INCREASED from 100px to 150px */
+    left: 15px !important;   
+    bottom: auto !important; 
     right: auto !important;
-    width: 230px !important; /* Keep it compact */
+    width: 230px !important; 
   }
 
   /* 2. Adjust the Content Box */
   .side-popup-widget .popup-content {
     padding: 15px;
-    /* When sliding out, slide UP instead of down */
     transform-origin: top center; 
   }
 
@@ -2484,7 +2483,7 @@ body.dark-mode .navmenu .dropdown ul {
   /* 4. The "Minimized" Tab - Make it Horizontal */
   .side-popup-widget.popup-is-minimized .popup-open-btn {
     left: 0 !important;
-    top: -35px !important; /* Position it ABOVE the hidden box */
+    top: -35px !important; /* Stays just above the (hidden) box */
     bottom: auto !important;
     right: auto !important;
     
@@ -2493,15 +2492,13 @@ body.dark-mode .navmenu .dropdown ul {
     transform: none !important;
     width: auto !important;
     padding: 6px 15px !important;
-    border-radius: 5px 5px 0 0 !important; /* Round the top corners */
+    border-radius: 5px 5px 0 0 !important; 
     box-shadow: 0 -2px 10px rgba(0,0,0,0.1) !important;
     
-    /* Ensure visibility */
     opacity: 1 !important;
     visibility: visible !important;
   }
 
-  /* Fix the icon inside the horizontal tab */
   .side-popup-widget .popup-open-btn i {
     transform: none !important;
     display: inline-block !important;
@@ -2511,7 +2508,7 @@ body.dark-mode .navmenu .dropdown ul {
 
   /* 5. Animation Direction */
   .side-popup-widget.popup-is-minimized .popup-content {
-    transform: translateY(-20px) !important; /* Slide UP to hide */
+    transform: translateY(-20px) !important; 
     opacity: 0 !important;
     visibility: hidden !important;
   }
