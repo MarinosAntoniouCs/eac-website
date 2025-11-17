@@ -2452,7 +2452,7 @@ body.dark-mode .navmenu .dropdown ul {
     display: block !important;
     position: fixed !important;
     left: 0 !important;        
-    top: 50% !important;       
+    top: 65% !important;       
     bottom: auto !important;
     right: auto !important;
     transform: translateY(-50%) !important; /* Centers it vertically */
@@ -2521,6 +2521,7 @@ body.dark-mode .navmenu .dropdown ul {
     to { transform: translateX(0); opacity: 1; }
   }
 }
+
 
 
 
