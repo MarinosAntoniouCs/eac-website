@@ -2551,15 +2551,26 @@ body.dark-mode .header-mode-toggle:hover {
   color: var(--accent-color);
 }
 
-/* Mobile Adjustment */
+/* * Fix Mobile Header Layout 
+ * Aligns the Dark Mode Toggle and Burger Menu side-by-side
+ */
 @media (max-width: 1199px) {
+  .navmenu {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: flex-end !important; /* Aligns them to the right */
+  }
+
   .header-mode-toggle {
-    margin-left: auto; /* Pushes it to the right, next to burger */
-    margin-right: 15px; /* Gap between Moon and Burger */
-    font-size: 24px;    /* Slightly larger for tapping */
+    margin-left: 0 !important;  /* Reset auto margin */
+    margin-right: 20px !important; /* Add space between Moon and Burger */
+    font-size: 24px;
+  }
+  
+  .mobile-nav-toggle {
+    margin-right: 10px !important; /* Small spacing from edge */
   }
 }
-
 
 
 
