@@ -2497,7 +2497,7 @@ body.dark-mode .navmenu .dropdown ul {
   /* Fix the Icon inside the vertical tab */
   .side-popup-widget .popup-open-btn i {
     display: inline-block !important;
-    transform: rotate(0deg) !important; 
+    transform: rotate(180deg) !important; 
     margin: 0 !important;
   }
 
@@ -2519,6 +2519,7 @@ body.dark-mode .navmenu .dropdown ul {
     to { transform: translateX(0); opacity: 1; }
   }
 }
+
 
 
 
