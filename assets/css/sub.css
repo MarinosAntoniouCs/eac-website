@@ -2522,7 +2522,43 @@ body.dark-mode .navmenu .dropdown ul {
   }
 }
 
+/*
+ * Header Dark Mode Toggle (Standalone)
+ * --------------------------------------------------
+ */
+.header-mode-toggle {
+  font-size: 22px;
+  cursor: pointer;
+  margin-left: 20px;   /* Space from the menu links on Desktop */
+  margin-right: 10px;  /* Space from the Burger Icon on Mobile */
+  color: var(--nav-color);
+  transition: 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
+.header-mode-toggle:hover {
+  color: var(--accent-color);
+}
+
+/* Dark Mode Specifics for the Toggle */
+body.dark-mode .header-mode-toggle {
+  color: #ffffff;
+}
+
+body.dark-mode .header-mode-toggle:hover {
+  color: var(--accent-color);
+}
+
+/* Mobile Adjustment */
+@media (max-width: 1199px) {
+  .header-mode-toggle {
+    margin-left: auto; /* Pushes it to the right, next to burger */
+    margin-right: 15px; /* Gap between Moon and Burger */
+    font-size: 24px;    /* Slightly larger for tapping */
+  }
+}
 
 
 
