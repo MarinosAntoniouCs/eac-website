@@ -2829,7 +2829,7 @@ body.dark-mode .navmenu .dropdown ul {
   
   /* 1. Move the Widget Container */
   .side-popup-widget {
-    top: 150px !important;   /* <-- INCREASED from 100px to 150px */
+    top: 250px !important;   /* <-- INCREASED from 100px to 150px */
     left: 15px !important;   
     bottom: auto !important; 
     right: auto !important;
