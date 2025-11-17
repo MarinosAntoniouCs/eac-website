@@ -2885,7 +2885,6 @@ body.dark-mode .navmenu .dropdown ul {
     transform: rotate(180deg) !important; 
     transform-origin: center center !important;
     margin: 0 !important;
-    border: 1px solid red;  <-- UNCOMMENT THIS IF YOU NEED TO DEBUG */
   }
 
   /* 4. Animation: Slide In/Out */
