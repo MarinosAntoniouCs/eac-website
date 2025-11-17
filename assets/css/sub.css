@@ -2441,76 +2441,82 @@ body.dark-mode .navmenu .dropdown ul {
   background-color: #0f1f33 !important; /* Solid darker blue */
 }
 
-/* * Mobile-Only "Top Left" Popup Fix 
- * Moves the popup down to clear the logo/header
+/* * Mobile "Side Drawer" Popup (Vertical Tab)
+ * Position: Middle-Left
  */
 @media (max-width: 575px) {
   
-  /* 1. Move the Widget Container */
+  /* 1. Position the Widget Container in the Middle-Left */
   .side-popup-widget {
-    top: 250px !important;   /* <-- INCREASED from 100px to 150px */
-    left: 15px !important;   
-    bottom: auto !important; 
+    display: block !important;
+    position: fixed !important;
+    left: 0 !important;        
+    top: 50% !important;       
+    bottom: auto !important;
     right: auto !important;
-    width: 230px !important; 
+    transform: translateY(-50%) !important; /* Centers it vertically */
+    z-index: 100001 !important; 
+    width: 260px !important;
   }
 
-  /* 2. Adjust the Content Box */
+  /* 2. Style the Content Box */
   .side-popup-widget .popup-content {
     padding: 15px;
-    transform-origin: top center; 
+    border-radius: 0 8px 8px 0; /* Round the right corners */
+    box-shadow: 5px 0 15px rgba(0,0,0,0.1);
+    margin-left: 0 !important;
   }
 
-  /* 3. Adjust Text & Buttons for Mobile */
-  .side-popup-widget h4 {
-    font-size: 15px;
-    margin-bottom: 5px;
-  }
-  
-  .side-popup-widget p {
-    font-size: 12px;
-    line-height: 1.3;
-    margin-bottom: 10px;
-  }
-
-  .side-popup-widget .btn-popup-call,
-  .side-popup-widget .btn-popup-email {
-    padding: 6px 10px;
-    font-size: 13px;
-    margin-bottom: 6px;
-  }
-
-  /* 4. The "Minimized" Tab - Make it Horizontal */
+  /* 3. The Vertical Tab (Visible ONLY when minimized) */
   .side-popup-widget.popup-is-minimized .popup-open-btn {
-    left: 0 !important;
-    top: -35px !important; /* Stays just above the (hidden) box */
+    /* --- This makes it vertical --- */
+    writing-mode: vertical-rl !important;
+    text-orientation: mixed !important;
+    transform: rotate(180deg) !important; 
+    
+    /* --- This positions it correctly on the left edge --- */
+    position: absolute !important;
+    left: 0 !important; 
+    top: 0 !important;
     bottom: auto !important;
     right: auto !important;
     
-    /* Style it as a horizontal tab */
-    writing-mode: vertical-rl !important;
-    transform: none !important;
+    /* Styling */
     width: auto !important;
-    padding: 6px 15px !important;
+    padding: 15px 8px !important;
     border-radius: 5px 5px 0 0 !important; 
-    box-shadow: 0 -2px 10px rgba(0,0,0,0.1) !important;
     
     opacity: 1 !important;
     visibility: visible !important;
+    display: flex !important;
+    align-items: center;
+    gap: 8px;
+    margin: 0 !important;
   }
 
+  /* Fix the Icon inside the vertical tab */
   .side-popup-widget .popup-open-btn i {
-    transform: none !important;
     display: inline-block !important;
-    margin-right: 5px !important;
-    margin-bottom: 0 !important;
+    transform: rotate(0deg) !important; 
+    margin: 0 !important;
   }
 
-  /* 5. Animation Direction */
+  /* 4. Animation: Slide In/Out */
+  
+  /* Hidden State: Box is hidden, Tab stays visible */
   .side-popup-widget.popup-is-minimized .popup-content {
-    transform: translateY(-20px) !important; 
-    opacity: 0 !important;
-    visibility: hidden !important;
+    display: none !important; /* Hide the box completely when minimized */
+  }
+  
+  /* Visible State: Box is visible */
+  .side-popup-widget.popup-is-visible .popup-content {
+    display: block !important;
+    animation: slideInLeft 0.3s ease-out forwards;
+  }
+
+  @keyframes slideInLeft {
+    from { transform: translateX(-20px); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
   }
 }
 /* * Hide "Free Advice" Popup on Mobile
@@ -2521,5 +2527,6 @@ body.dark-mode .navmenu .dropdown ul {
     display: none !important;
   }
 }
+
 
 
