@@ -2869,7 +2869,7 @@ body.dark-mode .navmenu .dropdown ul {
     right: auto !important;
     
     /* Style it as a horizontal tab */
-    writing-mode: horizontal-tb !important;
+    writing-mode: vertical-rl !important;
     transform: none !important;
     width: auto !important;
     padding: 6px 15px !important;
