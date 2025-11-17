@@ -51,10 +51,13 @@
 
         <nav id="navmenu" class="navmenu">
           <ul>
-            <li><a href="main.html" class="active">Home</a></li>
+            <li><a href="main.html#hero">Home</a></li>
+            <li><a href="main.html#about">About Andros</a></li>
+            
             <li class="dropdown">
-              <a href="#services">
-                Insurance Services <i class="bi bi-chevron-down"></i>
+              <a href="main.html#services-flip">
+                <span>Insurance Services</span> 
+                <i class="bi bi-chevron-down toggle-dropdown"></i>
               </a>
               <ul>
                   <li><a href="motor.html">Motor Insurance</a></li>
@@ -63,24 +66,27 @@
                   <li><a href="business.html">Business Insurance</a></li>
               </ul>
             </li>
-            <li><a href="#testimonials">Testimonials</a></li>
-            <li><a href="#faq">FAQ</a></li>
-            <li><a href="#contact">Contact</a></li>
+
+            <li><a href="main.html#testimonials">Testimonials</a></li>
+            <li><a href="main.html#faq">FAQ</a></li>
+            <li><a href="main.html#contact">Contact</a></li>
+            
             <li class="dropdown">
-              <a href="#services">
-                EN <i class="bi bi-chevron-down"></i>
+              <a href="#">
+                <span>EN</span> 
+                <i class="bi bi-chevron-down toggle-dropdown"></i>
               </a>
               <ul>
                   <li><a href="EL/main.html">EL</a></li>
-              </ul>
+                  </ul>
             </li>
-            <!-- Dark Mode Toggle in Nav -->
-    <li>
-      <a href="#" id="darkModeToggle" class="dark-mode-nav-toggle">
-        <i class="bi bi-moon-fill moon-icon"></i>
-        <i class="bi bi-sun-fill sun-icon" style="display: none;"></i>
-      </a>
-    </li>
+
+            <li>
+              <a href="#" id="darkModeToggle" class="dark-mode-nav-toggle">
+                <i class="bi bi-moon-fill moon-icon"></i>
+                <i class="bi bi-sun-fill sun-icon" style="display: none;"></i>
+              </a>
+            </li>
           </ul>
           <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
         </nav>
