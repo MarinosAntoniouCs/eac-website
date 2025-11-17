@@ -2519,14 +2519,8 @@ body.dark-mode .navmenu .dropdown ul {
     to { transform: translateX(0); opacity: 1; }
   }
 }
-/* * Hide "Free Advice" Popup on Mobile
- * (Prevents overlap with logo and chatbot)
- */
-@media (max-width: 575px) {
-  .side-popup-widget {
-    display: none !important;
-  }
-}
+
+
 
 
 
