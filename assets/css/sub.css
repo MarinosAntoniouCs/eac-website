@@ -2522,47 +2522,190 @@ body.dark-mode .navmenu .dropdown ul {
   }
 }
 
-/*
- * Header Dark Mode Toggle (Standalone)
- * --------------------------------------------------
- */
-.header-mode-toggle {
-  font-size: 22px;
-  cursor: pointer;
-  margin-left: 20px;   /* Space from the menu links on Desktop */
-  margin-right: 10px;  /* Space from the Burger Icon on Mobile */
-  color: var(--nav-color);
-  transition: 0.3s;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
 
-.header-mode-toggle:hover {
-  color: var(--accent-color);
-}
+/*--------------------------------------------------------------
+# Dark Mode Toggle - COMPLETE + FIXED VERSION
+# (Correct icon alignment + correct visibility)
+--------------------------------------------------------------*/
 
-/* Dark Mode Specifics for the Toggle */
-body.dark-mode .header-mode-toggle {
-  color: #ffffff;
-}
 
-body.dark-mode .header-mode-toggle:hover {
-  color: var(--accent-color);
-}
+/* Desktop View (>= 1200px) */
+@media (min-width: 1200px) {
+  .navmenu {
+    display: flex;
+    align-items: center;
+    gap: 0;
+  }
 
-/* Mobile Adjustment */
-@media (max-width: 1199px) {
+  .navmenu ul {
+    display: flex;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+  }
+
+  /* Dark mode toggle button on desktop */
+  #darkModeToggle.header-mode-toggle,
   .header-mode-toggle {
-    margin-left: auto; /* Pushes it to the right, next to burger */
-    margin-right: 15px; /* Gap between Moon and Burger */
-    font-size: 24px;    /* Slightly larger for tapping */
+    font-size: 22px;
+    cursor: pointer;
+    color: var(--nav-color);
+    transition: 0.3s;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 18px 15px;
+    margin: 0;
+    order: 1;
+    line-height: 1;
+  }
+
+  #darkModeToggle.header-mode-toggle:hover,
+  .header-mode-toggle:hover {
+    color: var(--accent-color);
+  }
+
+  /* Hide burger on desktop */
+  .mobile-nav-toggle {
+    display: none !important;
   }
 }
 
 
 
+/* -------------------------------------------------------------
+   Mobile View (< 1200px)
+-------------------------------------------------------------- */
+@media (max-width: 1199px) {
+
+  .navmenu {
+    display: flex;
+    align-items: center !important;
+    gap: 15px;
+    margin-left: auto;
+  }
+
+  /* Dark mode toggle button */
+  #darkModeToggle.header-mode-toggle,
+  .header-mode-toggle {
+    font-size: 28px;
+    cursor: pointer;
+    color: var(--nav-color);
+    transition: 0.3s;
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+    order: 1;
+    flex-shrink: 0;
+    width: 28px;
+    height: 28px;
+    line-height: 1 !important;
+  }
+
+  /* Burger aligned perfectly */
+  .mobile-nav-toggle {
+    order: 2;
+    flex-shrink: 0;
+    margin: 0;
+    font-size: 28px !important;
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    line-height: 1 !important;
+    padding: 0;
+  }
+
+  /* Mobile menu dropdown */
+  .navmenu ul {
+    display: none;
+    position: absolute;
+    inset: 60px 20px auto 20px;
+  }
+
+  .mobile-nav-active .navmenu ul {
+    display: block;
+  }
+}
 
 
+
+/* -------------------------------------------------------------
+   Dark Mode Color Rules
+-------------------------------------------------------------- */
+body.dark-mode #darkModeToggle.header-mode-toggle,
+body.dark-mode .header-mode-toggle {
+  color: var(--nav-color);
+}
+
+body.dark-mode #darkModeToggle.header-mode-toggle:hover,
+body.dark-mode .header-mode-toggle:hover {
+  color: var(--nav-hover-color);
+}
+
+
+
+/* -------------------------------------------------------------
+   PERFECT ICON ALIGNMENT FIX (moon/sun center)
+-------------------------------------------------------------- */
+#darkModeToggle i,
+.header-mode-toggle i {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  margin: 0;
+  padding: 0;
+  line-height: 0 !important;
+  height: 100%;
+  width: 100%;
+}
+
+
+
+/* -------------------------------------------------------------
+   ICON VISIBILITY FIX — only one icon at a time
+-------------------------------------------------------------- */
+#darkModeToggle .moon-icon,
+.header-mode-toggle .moon-icon {
+  display: inline-flex !important;
+}
+
+#darkModeToggle .sun-icon,
+.header-mode-toggle .sun-icon {
+  display: none !important;
+}
+
+body.dark-mode #darkModeToggle .moon-icon,
+body.dark-mode .header-mode-toggle .moon-icon {
+  display: none !important;
+}
+
+body.dark-mode #darkModeToggle .sun-icon,
+body.dark-mode .header-mode-toggle .sun-icon {
+  display: inline-flex !important;
+}
+
+
+
+/* -------------------------------------------------------------
+   Header Container + Logo
+-------------------------------------------------------------- */
+.header .branding .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header .logo {
+  margin-right: auto;
+}
+
+/* Navmenu alignment */
+.navmenu {
+  margin-left: auto;
+}
 
 
